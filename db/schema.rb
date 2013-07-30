@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712134446) do
+ActiveRecord::Schema.define(:version => 20130730020318) do
 
   create_table "cookies", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130712134446) do
     t.integer  "cupcake_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "image"
   end
 
   create_table "cupcakes", :force => true do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130712134446) do
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.text     "image"
   end
 
   create_table "frostings", :force => true do |t|
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130712134446) do
     t.integer  "cupcake_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "image"
   end
 
   create_table "ice_creams", :force => true do |t|
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20130712134446) do
     t.integer  "cupcake_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "image"
   end
 
   create_table "identities", :force => true do |t|
@@ -66,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130712134446) do
     t.integer  "cupcake_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "image"
   end
 
   create_table "users", :force => true do |t|
