@@ -11,7 +11,7 @@
 #
 
 class IceCream < ActiveRecord::Base
-  attr_accessible :color, :name, :cupcake_id
+  attr_accessible :color, :name, :cupcake_id, :image
 
   validates_presence_of :name, :color
 

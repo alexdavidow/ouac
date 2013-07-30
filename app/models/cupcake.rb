@@ -11,7 +11,7 @@
 #
 
 class Cupcake < ActiveRecord::Base
-  attr_accessible :current_score, :name, :user_id
+  attr_accessible :current_score, :name, :user_id, :image
 
   validates_presence_of :name
   validates_presence_of :current_score
