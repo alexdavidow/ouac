@@ -22,34 +22,6 @@ function set_timer(){
   timer = setInterval(clock_tick, 1000);
 }
 
-function win_level() {
-  if (($("#cookie").children().length === 1) && ($("#ice_cream").children().length === 1) && ($("#frosting").children().length === 1) && ($("#topping").children().length === 1)) {
-    $(location).attr('href', '/win');
-  } 
-}
-
-function lose_life() {
-  if ($("#cookie").children().length > 1) {
-    $('#life_holder').children().first().remove();
-    $("#cookie").children()[1].remove()
-  } else if ($("#ice_cream").children().length > 1) {
-    $('#life_holder').children().first().remove();
-    $("#ice_cream").children()[1].remove()
-  } else if ($("#frosting").children().length > 1){
-    $('#life_holder').children().first().remove();
-    $("#frosting").children()[1].remove()
-  } else if ($("#topping").children().length > 1){
-    $('#life_holder').children().first().remove();
-    $("#topping").children()[1].remove()
-  } 
-}
-
-function lose_level() {
-  if ($("#life_holder").children().length === 0) {
-    $(location).attr('href', '/lose');
-  }
-}
-
 function increment_points_by(number) {
   current_points += parseInt(number);
   $('#points').text(current_points);
@@ -119,6 +91,7 @@ var data_toppings = {
 }
 
 function create_ingredient_element(){
+  // need to add random pick of image in switch statements
   var ingredient = $("<div>");
   ingredient.addClass('ingredient draggable');
   ingredient.css('top','0')
@@ -126,7 +99,7 @@ function create_ingredient_element(){
     case (1):
       var rand_pick = Math.floor(Math.random()*4)+0
       ingredient.text(cookies_data_object[rand_pick].name); 
-      ingredient.css('background-color', '#ec7124').addClass('falling_cookie');
+      ingredient.css('background-image', 'cookies_data_object[rand_pick].image').addClass('falling_cookie');
       break;
     case (2): 
       var rand_pick = Math.floor(Math.random()*4)+0
@@ -136,7 +109,7 @@ function create_ingredient_element(){
     case (3):
       var rand_pick = Math.floor(Math.random()*4)+0
       ingredient.text(frostings_data_object[rand_pick].name);
-      ingredient.css('background-color', '#00a384').addClass('falling_frosting');
+      ingredient.css('background-image', 'frostings_data_object[rand_pick].image').addClass('falling_frosting');
       break;
     case (4): 
       var rand_pick = Math.floor(Math.random()*4)+0
@@ -170,9 +143,36 @@ function create_ingredient_element(){
   // return ingredient;
 }
 
-
 function descend_ingredients(ingredient_element){
   _.each($('.ingredient'),function(element){descend($(element))});
+}
+
+function win_level() {
+  if (($("#cookie").children().length === 1) && ($("#ice_cream").children().length === 1) && ($("#frosting").children().length === 1) && ($("#topping").children().length === 1)) {
+    $(location).attr('href', '/win');
+  } 
+}
+
+function lose_life() {
+  if ($("#cookie").children().length > 1) {
+    $('#life_holder').children().first().remove();
+    $("#cookie").children()[1].remove()
+  } else if ($("#ice_cream").children().length > 1) {
+    $('#life_holder').children().first().remove();
+    $("#ice_cream").children()[1].remove()
+  } else if ($("#frosting").children().length > 1){
+    $('#life_holder').children().first().remove();
+    $("#frosting").children()[1].remove()
+  } else if ($("#topping").children().length > 1){
+    $('#life_holder').children().first().remove();
+    $("#topping").children()[1].remove()
+  } 
+}
+
+function lose_level() {
+  if ($("#life_holder").children().length === 0) {
+    $(location).attr('href', '/lose');
+  }
 }
 
 function add_ingredient_to_box(e) {
