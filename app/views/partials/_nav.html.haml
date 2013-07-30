@@ -1,0 +1,9 @@
+#navbar
+  .row
+    .two
+      "OAUC"
+    .six.columns
+      - if current_user
+        = current_user.email
+        = link_to 'Logout', destroy_user_session_path, method: :delete
+

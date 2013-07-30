@@ -8,16 +8,16 @@
   %body
     / %p.notice= notice
     / %p.alert= alert
-    #container
-      .row#navbar
-        #logo
-          %h3
-            #title_nav= link_to 'Cupcake Game', cupcakes_path
-        #login
-          - if current_user
-            = current_user.email
-            = link_to 'Logout', destroy_user_session_path, method: :delete
-          / - else 
+#container
+.row#navbar
+#logo
+%h3
+#title_nav= link_to 'Cupcake Game', cupcakes_path
+#login
+- if current_user
+= current_user.email
+= link_to 'Logout', destroy_user_session_path, method: :delete
+        / - else 
           /   = link_to 'Login', new_user_session_path, method: :get
 
             
