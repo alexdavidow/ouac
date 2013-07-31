@@ -1,8 +1,7 @@
 class CookiesController < ApplicationController
   def index
-    @cupcakes = Cupcake.all
     @cookies = Cookie.all
-    # render :json => @cookies.to_json
+    render :json => @cookies.to_json
   end
 
   def new
