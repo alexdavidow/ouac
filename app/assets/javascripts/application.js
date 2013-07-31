@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
+//= require foundation
+//= require custom.modernizr
 //= require_tree .
+
+$(document).foundation();
 
 
