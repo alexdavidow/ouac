@@ -20,6 +20,10 @@
   height: 120px; 
 }
 
+.hidden{
+  display: none;
+}
+
 #logo {
   padding: 2px;
 }
