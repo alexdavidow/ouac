@@ -1,7 +1,7 @@
-#container {
+/*#container {
   background: url('/cupcakes2.jpg') center center no-repeat;
   background-size: cover;
-}
+}*/
 
 #navbar {
   height: 67px;
@@ -208,12 +208,12 @@ h4 {
   background-image: url('cupcake-size.jpg');
 }
 
-img {
-  /*border: 1px solid black;*/
+/*img {
+  border: 1px solid black;
   float: left;
   height: 150px;
   width: 150px;
-}
+}*/
 
 .timer {
   font-weight: bold;

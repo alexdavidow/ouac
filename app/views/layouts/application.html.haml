@@ -6,8 +6,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    / %p.notice= notice
-    / %p.alert= alert
     #container
       .row#navbar
         #logo
@@ -18,14 +16,6 @@
             = current_user.email
             = link_to 'Logout', destroy_user_session_path, method: :delete
           / - else 
-          /   = link_to 'Login', new_user_session_path, method: :get
-
-            
+          /   = link_to 'Login', new_user_session_path, method: :get        
       .row#content
-
-        / .row#cupcake_goal
-        /   
-        / #scoring
-        / #game
-        .row
-          = yield
+        = yield

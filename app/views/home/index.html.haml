@@ -3,3 +3,29 @@
   %div
     <a href=#{twitter.url} target='_blank'>#{image_tag twitter.image}
 
+  
+.row
+  .large-12.columns
+    .slideshow-wrapper
+      .orbit-container
+        %ul.orbit-slides-container{:data => {:options => "pause_on_hover:false; timer_speed:5000;", :orbit => ""}}
+          %li.active
+            %img{:src => "/IMG_0676.JPG"}
+            .orbit-caption Image 1
+          %li
+            %img{:src => "/cupcake_cross_section.jpeg"}
+            .orbit-caption Image 2
+
+        %a.orbit-prev{:href=>"#"}
+          %span
+        %a.orbit-next{:href=>"#"}
+          %span        
+        .orbit-timer
+          %span
+            .orbit-progress
+
+      .orbit-bullets
+        %li.active{:data => {:'orbit-slide-number' => "1"}}
+        %li{:data => {:'orbit-slide-number' => "2"}}
+
+  
