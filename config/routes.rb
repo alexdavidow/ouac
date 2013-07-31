@@ -4,6 +4,7 @@ CupcakeGame::Application.routes.draw do
   root :to => "home#index"
 
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
+  resources :users, only: [:show]
 
   resources :cupcakes
   resources :cookies, :only => [:index, :new, :create, :destroy]

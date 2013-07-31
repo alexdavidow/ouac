@@ -18,10 +18,8 @@
           = current_user.name
           %ul.dropdown
             %li
-              %a{href: '#'}
-                My Account
-              %a{href: '#'}
-                Sign Out
+              = link_to 'My Account', edit_user_registration_path
+              = link_to 'Sign Out', destroy_user_session_path 
         %a{href: '#'}
           Cart
       - else
