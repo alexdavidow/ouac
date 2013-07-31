@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
-//= require foundation
+//= require zepto
 //= require custom.modernizr
+//= require foundation
 //= require_tree .
 
 $(document).foundation();

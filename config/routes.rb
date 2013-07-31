@@ -14,6 +14,7 @@ CupcakeGame::Application.routes.draw do
   get 'win' => 'cupcakes#win'
   get 'lose' => 'cupcakes#lose'
   get 'sessions/new' => 'sessions#new'
+  get 'menu' => 'home#menu'
   post 'sessions' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 

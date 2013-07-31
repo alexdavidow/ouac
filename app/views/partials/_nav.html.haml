@@ -7,19 +7,22 @@
     %a{href:'#'}
       Summer 2013 Menu
     %a{href:'#'}
-      About
+      Cupcake Creator
     %a{href:'#'}
       Cupcake Game
     %a{href:'#'}
-      Create a Cupcake!
+      About
+    %a{href:'#'}
+      Contact
     %ul.right
       - if user_signed_in? 
-        %ul.has-dropdown
-          = current_user.name
-          %ul.dropdown
-            %li
-              = link_to 'My Account', edit_user_registration_path
-              = link_to 'Sign Out', destroy_user_session_path 
+        %li
+          %ul.has-dropdown
+            = current_user.name
+            %ul.dropdown
+              %li
+                = link_to 'My Account', edit_user_registration_path
+                = link_to 'Sign Out', destroy_user_session_path 
         %a{href: '#'}
           Cart
       - else
